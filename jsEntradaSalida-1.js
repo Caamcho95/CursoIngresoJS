@@ -6,5 +6,7 @@ var nombre
 nombre = "pepito";
 alert(nombre);
 alert ("su nombre es: "+nombre);
+nombre=prompt("ingrese nombre");
+
 }
 
