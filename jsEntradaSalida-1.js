@@ -1,12 +1,7 @@
-//Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
-function Mostar()
+//Debemos lograr mostrar un mensaje al presionar el botón  'mostrar'.
+function mostrar()
 {
-alert("esto funciona de maravilla");
-var nombre
-nombre = "pepito";
-alert(nombre);
-alert ("su nombre es: "+nombre);
-nombre=prompt("ingrese nombre");
-
+	alert("Esto funciona de maravilla");
+	
 }
 
