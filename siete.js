@@ -1,47 +1,77 @@
 function mostrar()
 {
+	var nombre;
 	var sexo;
-	var promedio;
+	var edad;
 	var nota;
-	var minimaNota;
-	var contador=0
-	var contadorNota=0;
-	var promedioNotas;
-	var acumuladornota=0;
-	var contadorVarones=0;
+	var peorNota
+	var peroNotaSexo
+	var contador;
+	var mejorNota;
+	var masviejo
+	var nombreMasViejo
+	var masChico;
+	var masChicoNota
 
-	while(contador<3)
+	contador=0
+
+	while(contador<7)
 	{
-		nombre = prompt("Ingrese nombre");
-		sexo = prompt("Ingrese Sexo f o m");
-		
-		while(sexo != "f" && sexo != "m")
-		{
-			sexo = prompt("reingrese sexo");
-		}
-
-		nota = prompt("ingrese nota")
-		nota = parseInt(nota);
-
-		while(nota<0 || nota>10)
-		{
-			nota = prompt("REingrese nota")
-			nota = parseInt(nota);
-
-		}
-		if(nota >= 6 && sexo == "m")
-		{
-			contadorVarones++
-		}
-
-		acumuladornota= acumuladornota+nota
-
 		contador++
-		contadorNota++
+		nombre = prompt("Ingrese nombre");
+		sexo = prompt("Ingrese sexo m o f");
+		while(sexo != "f" && sexo!="m")
+		{
+			sexo=prompt("Reingrese sexo");
+		}
+		edad = prompt("Ingrese edad");
+		while(isNaN(edad)||edad>100 ||edad<=0)
+		{
+			edad = prompt("Reingrese edad");
+		}
+		nota = prompt("Ingrese nota");
+		while(isNaN(nota)||nota>10||nota<0)
+		{
+			nota=prompt("Reingrese nota");
+		}
+		
 
+		if(contador==1)
+		{
+			peorNota = nota
+			peroNotaSexo=nombre
+
+			masviejo=edad
+			nombreMasViejo=nombre
+
+			masChico=edad
+			masChicoNota=nota
+
+
+		}
+		else
+		{
+			if(nota<peorNota)
+		{
+			peorNota=nota;
+			peroNotaSexo=sexo
+
+		}
+		if(edad>masviejo)
+		{
+			masviejo=edad
+			nombreMasViejo=nombre
+		}
+		if(edad<masChico)
+		{
+			masChico=edad
+			masChicoNota=nota
+		}
+		}
 	}
+	document.write("la peor nota es "+peorNota+ " y el sexo es "+peroNotaSexo)
+	document.write("<br>"+"La edad del mas viejo es "+masviejo+ " Y el nombre es "+nombreMasViejo)
+	document.write("<br>"+"La edad del mas chico es "+masChico+ " Y su nota es "+masChicoNota)
 
-	promedioNotas=acumuladornota/contadorNota;
-	alert(promedioNotas);
-	alert(contadorVarones);
+
 }
