@@ -1,77 +1,64 @@
 function mostrar()
 {
-	var nombre;
 	var sexo;
-	var edad;
+	var promedio;
 	var nota;
-	var peorNota
-	var peroNotaSexo
-	var contador;
-	var mejorNota;
-	var masviejo
-	var nombreMasViejo
-	var masChico;
-	var masChicoNota
+	var minimaNota;
+	var contador=0
+	var contadorNota=0;
+	var promedioNotas;
+	var acumuladornota=0;
+	var contadorVarones=0;
+	var minimaNotaSexo;
 
-	contador=0
-
-	while(contador<7)
-	{
+	while(contador<5)
+	{	
 		contador++
 		nombre = prompt("Ingrese nombre");
-		sexo = prompt("Ingrese sexo m o f");
-		while(sexo != "f" && sexo!="m")
-		{
-			sexo=prompt("Reingrese sexo");
-		}
-		edad = prompt("Ingrese edad");
-		while(isNaN(edad)||edad>100 ||edad<=0)
-		{
-			edad = prompt("Reingrese edad");
-		}
-		nota = prompt("Ingrese nota");
-		while(isNaN(nota)||nota>10||nota<0)
-		{
-			nota=prompt("Reingrese nota");
-		}
+		sexo = prompt("Ingrese Sexo f o m");
 		
+		while(sexo != "f" && sexo != "m")
+		{
+			sexo = prompt("reingrese sexo");
+		}
 
+		nota = prompt("ingrese nota")
+		nota = parseInt(nota);
+
+		while(isNaN(nota)||nota<0 || nota>10)
+		{
+			nota = prompt("REingrese nota")
+			nota = parseInt(nota);
+
+		}
 		if(contador==1)
 		{
-			peorNota = nota
-			peroNotaSexo=nombre
-
-			masviejo=edad
-			nombreMasViejo=nombre
-
-			masChico=edad
-			masChicoNota=nota
-
-
+			minimaNota=nota;
+			minimaNotaSexo=sexo;
 		}
 		else
 		{
-			if(nota<peorNota)
+			if(nota<minimaNota)
+			{
+				minimaNota=nota;
+				minimaNotaSexo=sexo;
+			}
+		}
+		if(nota >= 6 && sexo == "m")
 		{
-			peorNota=nota;
-			peroNotaSexo=sexo
+			contadorVarones++
+		}
 
-		}
-		if(edad>masviejo)
-		{
-			masviejo=edad
-			nombreMasViejo=nombre
-		}
-		if(edad<masChico)
-		{
-			masChico=edad
-			masChicoNota=nota
-		}
-		}
+		
+		acumuladornota= acumuladornota+nota;
+
+		
+		
+
 	}
-	document.write("la peor nota es "+peorNota+ " y el sexo es "+peroNotaSexo)
-	document.write("<br>"+"La edad del mas viejo es "+masviejo+ " Y el nombre es "+nombreMasViejo)
-	document.write("<br>"+"La edad del mas chico es "+masChico+ " Y su nota es "+masChicoNota)
 
-
+	promedioNotas=acumuladornota/contador;
+	alert("El promedioa de las notas es "+promedioNotas);
+	alert("La cantidad de varones con una nota mas de 6 es "+contadorVarones);
+	alert("La nota mas baja es "+minimaNota+ " Y el sexo es "+minimaNotaSexo);
 }
