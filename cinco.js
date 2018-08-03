@@ -1,22 +1,28 @@
 function mostrar()
 {
 	var dia;
+	var mensaje;
 
 	dia= prompt("Ingrese dia");
 
-	if(dia=="domingo"||dia=="sabado")
+
+	switch(dia)
 	{
-		alert("Buen finde");
+		case "lunes":
+		case "martes":
+		case "miercoles":
+		case "jueves":
+		case "viernes":
+			mensaje="A trabajar";
+			break;
+		case "sabado":
+		case "domingo":
+			mensaje="Buen findes";
+			break;
+		default:
+			mensaje="el dia no es valido";
+
+		
 	}
-	else
-	{
-		if(dia=="lunes"||dia=="martes"||dia=="miercoles"||dia=="jueves"||dia=="viernes")
-		{
-			alert("A trabajar");
-		}
-		else
-		{
-			alert("el dia no existe");
-		}
-	}
+	alert(mensaje)
 }

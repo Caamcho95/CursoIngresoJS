@@ -1,14 +1,20 @@
 
 function mostrar()
 {
-    var largo;
-    var ancho;
- 
-    largo=prompt("Ingrese el largo");
-    ancho=prompt("Ingrese el ancho");
+	var base;
+	var altura;
+	var superficie;
+	var perimetro;
 
-     var perimetro=largo+ancho;
-    
-    alert("El perimetro es:"+perimetro);
-    
+	base=prompt("Ingresar base");
+	base=parseInt(base);
+	altura=prompt("ingrese altura");
+	altura=parseInt(altura);
+
+	superficie=(base*altura)/2;
+	perimetro=base*3;
+
+	alert("La superficie es "+superficie+ " y el perimetro es "+perimetro);
+
+
 }

@@ -2,28 +2,28 @@ function mostrar()
 {
 	var precio;
 	var descuento;
-	var precioDescuento;
-	var precioIva;
-	var precioFinal;
-	var precioFinalIva;
+	var descuentoDinero;
+	var precioDescuento
+	var iva=21
+	var ivaDescuento
+	var precioFinal
 
-	precio = prompt("Ingresar Precio");
-	descuento = prompt("Ingresar el descuento");
+	
+	precio=prompt("Ingrese precio");
+	precio=parseInt(precio);
+	descuento=prompt("Ingrese descuento");
+	descuento=parseInt(descuento);
 
-	precio = parseInt(precio);
-	descuento = parseInt(descuento);
+	descuentoDinero=(precio*descuento)/100
+	precioDescuento=precio - descuentoDinero;
+	precioIva=(precioDescuento*iva)/100
 
-	precioDescuento = (precio * descuento)/100;
+	precioFinal=precioDescuento+ precioIva
 
-	precioFinal = precio - precioDescuento;
-
-	precioIva = precio*0.21;
-
-	precioFinalIva = precioFinal+precioIva;
-
-	alert("El descuento en dinero es "+precioDescuento+" El precio con el descuento es "+ precioFinal+" El IVA es "+precioIva);
-
-	document.getElementById('elPrecioFinal').value = precioFinalIva;
+	alert("El descuento es "+descuentoDinero)
+	alert("El precio con descuento es "+precioDescuento);
+	alert("El iva es "+precioIva)
+	document.getElementById('elPrecioFinal').value = precioFinal
 
 
 
